@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>base64 URL auto-decoder</title>
+<style>
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 640px; margin: 6vh auto; padding: 0 1.2rem; color: #1a1a1a; }
+  h1 { font-size: 1.4rem; }
+  code { background: #f0f0f0; padding: .1em .35em; border-radius: 4px; }
+  a.btn { display: inline-block; margin: 1rem 0; padding: .7rem 1.3rem; background: #1a7f37; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; }
+  ol { padding-left: 1.2rem; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #111; color: #e6e6e6; }
+    code { background: #222; }
+  }
+</style>
+
+<h1>base64 URL auto-decoder</h1>
+<p>페이지 텍스트에서 base64 / base64url로 인코딩된 URL을 찾아 클릭 가능한 링크로 바꿔주는 유저스크립트.</p>
+
+<p><a class="btn" href="b64url.user.js">설치 (Install)</a></p>
+
+<h2>사용법</h2>
+<ol>
+  <li><a href="https://violentmonkey.github.io/get-it/" target="_blank" rel="noopener">Violentmonkey</a> 또는 Tampermonkey 설치</li>
+  <li>위 <b>설치</b> 버튼 클릭 → 확장 설치창이 뜨면 <b>Confirm installation</b></li>
+  <li>아무 페이지나 열면 base64 URL이 자동으로 링크로 변환됨</li>
+</ol>
+
+<p style="color:#888;font-size:.9rem">소스: <code>b64url.user.js</code> — <a href="b64url.user.js">보기</a></p>

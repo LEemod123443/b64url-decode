@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "base64 URL auto-decoder",
+  "version": "1.0",
+  "description": "Detects base64-encoded URLs on a page and replaces them with the decoded URL.",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "run_at": "document_idle",
+      "js": ["content.js"]
+    }
+  ]
+}
