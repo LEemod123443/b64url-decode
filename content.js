@@ -1,6 +1,7 @@
 // Finds base64 / base64url encoded URLs in page text and turns them into working links.
 const TOKEN = /[A-Za-z0-9_\-+/]{16,}={0,2}/g;
 const SKIP = new Set(["SCRIPT", "STYLE", "NOSCRIPT", "TEXTAREA", "CODE", "PRE"]);
+const STYLE = "background:#ffe100;color:#000;border-radius:3px;padding:0 3px;text-decoration:underline;font-weight:600;";
 
 function decode(tok) {
   try {
@@ -38,11 +39,17 @@ function process(node) {
     changed = true;
     if (anchor) {
       anchor.href = url;
+      anchor.target = "_blank";
+      anchor.rel = "noopener noreferrer";
+      anchor.style.cssText += STYLE;
       frag.appendChild(document.createTextNode(url));
     } else {
       const a = document.createElement("a");
       a.href = url;
       a.textContent = url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.style.cssText = STYLE;
       frag.appendChild(a);
     }
   });
